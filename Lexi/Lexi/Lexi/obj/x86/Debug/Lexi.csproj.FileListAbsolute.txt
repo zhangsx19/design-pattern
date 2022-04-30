@@ -1,0 +1,17 @@
+D:\User\lufangtao\lufangtao\DesignPattern\Lexi\Lexi\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\User\lufangtao\lufangtao\DesignPattern\Lexi\Lexi\obj\x86\Debug\Lexi.Properties.Resources.resources
+D:\User\lufangtao\lufangtao\DesignPattern\Lexi\Lexi\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\User\lufangtao\lufangtao\DesignPattern\Lexi\Lexi\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\User\lufangtao\lufangtao\DesignPattern\Lexi\Lexi\bin\Debug\Lexi.exe
+D:\User\lufangtao\lufangtao\DesignPattern\Lexi\Lexi\bin\Debug\Lexi.pdb
+D:\User\lufangtao\lufangtao\DesignPattern\Lexi\Lexi\obj\x86\Debug\Lexi.exe
+D:\User\lufangtao\lufangtao\DesignPattern\Lexi\Lexi\obj\x86\Debug\Lexi.pdb
+D:\design pattern\Lexi\Lexi\Lexi\bin\Debug\Lexi.exe
+D:\design pattern\Lexi\Lexi\Lexi\bin\Debug\Lexi.pdb
+D:\design pattern\Lexi\Lexi\Lexi\obj\x86\Debug\Lexi.csprojAssemblyReference.cache
+D:\design pattern\Lexi\Lexi\Lexi\obj\x86\Debug\Lexi.Form1.resources
+D:\design pattern\Lexi\Lexi\Lexi\obj\x86\Debug\Lexi.Properties.Resources.resources
+D:\design pattern\Lexi\Lexi\Lexi\obj\x86\Debug\Lexi.csproj.GenerateResource.cache
+D:\design pattern\Lexi\Lexi\Lexi\obj\x86\Debug\Lexi.csproj.CoreCompileInputs.cache
+D:\design pattern\Lexi\Lexi\Lexi\obj\x86\Debug\Lexi.exe
+D:\design pattern\Lexi\Lexi\Lexi\obj\x86\Debug\Lexi.pdb
