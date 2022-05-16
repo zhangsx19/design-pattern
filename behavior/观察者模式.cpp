@@ -2,7 +2,16 @@
 #include <cstring>
 #include <list>
 using namespace std;
-class Employee;
+class Secretary;
+class Employee{
+public:
+    Employee(string name,Secretary *s);
+    void receive(string inform);
+private:
+    string m_name;
+    Secretary *m_s;
+};
+
 class Secretary
 {
 public:
@@ -13,23 +22,24 @@ public:
         employee.push_back(p);
     }
     void setaction(string inform){
-        cout<<inform<<endl;
+        for (list<Employee *>::iterator it = employee.begin(); it != employee.end(); it++)
+        {
+            (*it)->receive(inform);
+        }
     }
 private:
     list<Employee *> employee;
 };
 
-class Employee
-{
-public:
-    Employee(string name,Secretary *s){
-        m_name = name;
-        m_s = s;
-    }
-private:
-    string m_name;
-    Secretary *m_s;
-};
+Employee::Employee(string name,Secretary *s){
+    m_name = name;
+    m_s = s;
+}
+
+void Employee::receive(string inform){
+    cout<<inform<<endl;
+}
+
 int main(){
     //被观察者(通知者)
     Secretary *s1 = new Secretary;

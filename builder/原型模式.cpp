@@ -41,6 +41,7 @@ public:
         tmp->age = this->age;
         tmp->name =this->name;
         tmp->resume=this->resume;
+        cout<<"have cloned"<<endl;
         return tmp;
     }
 };

@@ -6,14 +6,14 @@ class Current18v//希望用的接口
 private:
     /* data */
 public:
-    virtual void useCurrent18v() = 0;
+    virtual void useCurrent18v(char input) = 0;
 };
 class Current220v//已有的接口 
 {
 private:
     /* data */
 public:
-    virtual void useCurrent220v(){
+    virtual void useCurrent220v(int input){
         cout<<"我是220v"<<endl;
     }
 };
@@ -25,9 +25,9 @@ public:
     Adapter(Current220v *current){
         current_m = current;
     }
-    virtual void useCurrent18v(){
+    virtual void useCurrent18v(char input){
         cout<<"适配器 适配220v"<<endl;
-        current_m->useCurrent220v();
+        current_m->useCurrent220v((int)input);
     };
 };
 
@@ -37,7 +37,8 @@ public:
 int main(){
     Current220v *current = new Current220v();
     Adapter *adapter = new Adapter(current);
-    adapter->useCurrent18v();
+    char input = 'a';
+    adapter->useCurrent18v(input);
     cout<<"hello"<<endl;
     return 0;
 }

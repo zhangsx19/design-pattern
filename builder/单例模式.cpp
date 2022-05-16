@@ -68,7 +68,7 @@ Singelton2 *Singelton2::m_singer = new Singelton2;//饿汉式：不管你是否创建实例，
 int Singelton2::m_count = 0;
 void main2(){
     //饿汉式
-    Singelton2 *p1 = Singelton2::getInstance();//只有在使用时才去创建对象
+    Singelton2 *p1 = Singelton2::getInstance();
     Singelton2 *p2 = Singelton2::getInstance();
     if(p1!=p2){
         cout<<"不是同一个对象"<<endl;

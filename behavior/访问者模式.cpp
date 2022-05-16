@@ -7,6 +7,7 @@ class Visitor
 {
 public:
     virtual void visit(ParkElement *parkelement) = 0;//访问公园
+    virtual string gettype() = 0;
 };
 class ParkElement
 {
@@ -16,17 +17,43 @@ public:
 class ParkA:public ParkElement
 {
 public:
-    virtual void accept(Visitor *v){
-        v->visit(this);
+    ParkA(){
+        m_type = "公园A部分";
     }
+    virtual void accept(Visitor *v){
+        if(v->gettype()=="A清洁工"||v->gettype()=="管理者"){
+            v->visit(this);
+            cout<<m_type<<endl;
+        }else{
+            cout<<"无权访问"<<endl;
+        }
+    }
+    string gettype(){
+        return m_type;
+    }
+private:
+    string m_type;
 };
 
 class ParkB:public ParkElement
 {
 public:
-    virtual void accept(Visitor *v){
-        v->visit(this);
+    ParkB(){
+        m_type = "公园B部分";
     }
+    virtual void accept(Visitor *v){
+        if(v->gettype()=="B清洁工"||v->gettype()=="管理者"){
+            v->visit(this);
+            cout<<m_type<<endl;
+        }else{
+            cout<<"无权访问"<<endl;
+        }
+    }
+    string gettype(){
+        return m_type;
+    }
+private:
+    string m_type;
 };
 //整个公园
 class Park:public ParkElement
@@ -51,31 +78,58 @@ private:
 class VisitorA:public Visitor
 {
 public:
-    virtual void visit(ParkElement *parkelement){
-        cout<<"清洁工A 完成公园A打扫"<<endl;//parkelement->getName()
+    VisitorA(){
+        m_type = "A清洁工";
     }
+    virtual void visit(ParkElement *parkelement){
+        cout<<"清洁工A 打扫了";//parkelement->getName()
+    }
+    virtual string gettype(){
+        return m_type;
+    }
+private:
+    string m_type;
 };
 
 class VisitorB:public Visitor
 {
 public:
-    virtual void visit(ParkElement *parkelement){
-        cout<<"清洁工B 完成公园B打扫"<<endl;
+    VisitorB(){
+        m_type = "B清洁工";
     }
+    virtual void visit(ParkElement *parkelement){
+        cout<<"清洁工B 打扫了";
+    }
+    virtual string gettype(){
+        return m_type;
+    }
+private:
+    string m_type;
 };
 //管理者
 class ManagerVisitor:public Visitor
 {
-    virtual void visit(ParkElement *parkelement){
-        cout<<"管理者 访问公园各个部分"<<endl;
+public:    
+    ManagerVisitor(){
+        m_type = "管理者";
     }
+    virtual void visit(ParkElement *parkelement){
+        cout<<"管理者 访问了";
+    }
+    virtual string gettype(){
+        return m_type;
+    }
+private:
+    string m_type;
 };
 void main1(){
     Visitor *vA = new VisitorA;
     Visitor *vB = new VisitorB;
     ParkElement *pA = new ParkA;
     ParkElement *pB = new ParkB;
+    typeid(pA);
     pA->accept(vA);
+    pA->accept(vB);
     pB->accept(vB);
     delete pB;
     delete pA;
@@ -97,9 +151,8 @@ void main2(){
     delete mV;
 }
 int main(){
-    //main1();
-    main2();
-    //main3();
+    main1();
+    //main2();
     cout<<"hello"<<endl;
     return 0;
 }

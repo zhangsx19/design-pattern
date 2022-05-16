@@ -81,7 +81,7 @@ void State3::doSomeThing(Worker* w){
 
 int main(){
     Worker *w1 = new Worker;
-    w1->setHour(8);
+    w1->setHour(12);//»áÓÐËÀÑ­»·
     w1->doSomeThing();
     w1->setHour(10);
     w1->doSomeThing();
